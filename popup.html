@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proxy Switcher</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>Proxy Switcher</h1>
+      <div class="status-indicator">
+        <span class="status-dot" id="statusDot"></span>
+        <span class="status-text" id="statusText">OFF</span>
+      </div>
+    </div>
+
+    <!-- Profile Selection -->
+    <div class="section">
+      <label for="profileSelect">Profile:</label>
+      <select id="profileSelect" class="input-field">
+        <option value="burp">Burp Suite</option>
+        <option value="tor">Tor Browser</option>
+        <option value="custom">Custom Proxy</option>
+      </select>
+    </div>
+
+    <!-- Proxy Configuration -->
+    <div class="section">
+      <div class="form-group">
+        <label for="proxyHost">Host:</label>
+        <input type="text" id="proxyHost" class="input-field" placeholder="127.0.0.1">
+      </div>
+
+      <div class="form-group">
+        <label for="proxyPort">Port:</label>
+        <input type="number" id="proxyPort" class="input-field" placeholder="8080" min="1" max="65535">
+      </div>
+
+      <div class="form-group">
+        <label for="proxyProtocol">Protocol:</label>
+        <select id="proxyProtocol" class="input-field">
+          <option value="http">HTTP</option>
+          <option value="https">HTTPS</option>
+          <option value="socks5">SOCKS5</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="section">
+      <button id="saveButton" class="button button-secondary">Save Profile</button>
+      <button id="toggleButton" class="button button-primary">Enable Proxy</button>
+    </div>
+
+    <!-- Error Message -->
+    <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="success-message" style="display: none;"></div>
+
+    <!-- Additional Info -->
+    <div class="section info-section">
+      <p class="info-text">
+        <strong>Quick Setup:</strong><br>
+        • Burp Suite: 127.0.0.1:8080 (HTTP)<br>
+        • Tor Browser: 127.0.0.1:9050 (SOCKS5)<br>
+        • Custom: Configure as needed
+      </p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+/* Popup Styles for Proxy Switcher Extension */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.4;
+}
+
+.container {
+  width: 320px;
+  padding: 0;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff4757;
+  transition: background-color 0.3s ease;
+}
+
+.status-dot.active {
+  background: #2ed573;
+}
+
+.status-text {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Sections */
+.section {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 4px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 8px 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-field:invalid {
+  border-color: #ff4757;
+}
+
+/* Buttons */
+.button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: none;
+  min-width: 120px;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button-primary {
+  background: #667eea;
+  color: white;
+}
+
+.button-primary:hover {
+  background: #5a6fd8;
+}
+
+.button-primary.enabled {
+  background: #2ed573;
+}
+
+.button-primary.enabled:hover {
+  background: #26c662;
+}
+
+.button-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.button-secondary:hover {
+  background: #5a6268;
+}
+
+.section .button {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.section .button:last-child {
+  margin-right: 0;
+}
+
+/* Messages */
+.error-message,
+.success-message {
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  border-left: 4px solid;
+  margin: 0;
+  animation: slideIn 0.3s ease;
+}
+
+.error-message {
+  background: #fff5f5;
+  color: #c53030;
+  border-color: #ff4757;
+}
+
+.success-message {
+  background: #f0fff4;
+  color: #22543d;
+  border-color: #2ed573;
+}
+
+/* Info Section */
+.info-section {
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+
+.info-text {
+  font-size: 12px;
+  color: #6c757d;
+  line-height: 1.5;
+}
+
+.info-text strong {
+  color: #495057;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading state */
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 340px) {
+  .container {
+    width: 280px;
+  }
+  
+  .section {
+    padding: 12px 16px;
+  }
+  
+  .header {
+    padding: 12px 16px;
+  }
+}
